@@ -97,25 +97,25 @@ public class GUI {
 		chckbxLAA.setBounds(466, 239, 97, 23);
 		frame.getContentPane().add(chckbxLAA);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("New radio button");
-		buttonGroup_1.add(rdbtnNewRadioButton);
-		rdbtnNewRadioButton.setBounds(41, 201, 71, 23);
-		frame.getContentPane().add(rdbtnNewRadioButton);
+		JRadioButton rdbtnAnd1 = new JRadioButton("And");
+		buttonGroup_1.add(rdbtnAnd1);
+		rdbtnAnd1.setBounds(72, 201, 51, 23);
+		frame.getContentPane().add(rdbtnAnd1);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("New radio button");
-		buttonGroup_1.add(rdbtnNewRadioButton_1);
-		rdbtnNewRadioButton_1.setBounds(128, 201, 71, 23);
-		frame.getContentPane().add(rdbtnNewRadioButton_1);
+		JRadioButton rdbtnOr1 = new JRadioButton("Or");
+		buttonGroup_1.add(rdbtnOr1);
+		rdbtnOr1.setBounds(128, 201, 71, 23);
+		frame.getContentPane().add(rdbtnOr1);
 		
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("New radio button");
-		buttonGroup.add(rdbtnNewRadioButton_2);
-		rdbtnNewRadioButton_2.setBounds(435, 201, 71, 23);
-		frame.getContentPane().add(rdbtnNewRadioButton_2);
+		JRadioButton rdbtnAnd2 = new JRadioButton("And");
+		buttonGroup.add(rdbtnAnd2);
+		rdbtnAnd2.setBounds(469, 201, 51, 23);
+		frame.getContentPane().add(rdbtnAnd2);
 		
-		JRadioButton rdbtnNewRadioButton_1_1 = new JRadioButton("New radio button");
-		buttonGroup.add(rdbtnNewRadioButton_1_1);
-		rdbtnNewRadioButton_1_1.setBounds(522, 201, 71, 23);
-		frame.getContentPane().add(rdbtnNewRadioButton_1_1);
+		JRadioButton rdbtnOr2 = new JRadioButton("Or");
+		buttonGroup.add(rdbtnOr2);
+		rdbtnOr2.setBounds(522, 201, 71, 23);
+		frame.getContentPane().add(rdbtnOr2);
 		
 		textField = new JTextField();
 		textField.setBounds(222, 163, 86, 20);
