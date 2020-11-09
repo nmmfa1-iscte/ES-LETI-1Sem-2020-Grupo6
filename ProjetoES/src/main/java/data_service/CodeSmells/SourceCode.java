@@ -64,33 +64,33 @@ public class SourceCode {
 	}
 	public double getLAA() {
 		
-		double laa=0;
+		double laa=LAA.getNumericCellValue();
 		System.out.println(LAA);
 		return laa;
 	}
 	public void setLAA(Cell cell) {
 		LAA = cell;
 	}
-	public Cell getIs_long_method() {
-		return is_long_method;
+	public boolean getIs_long_method() {
+		return is_long_method.getBooleanCellValue();
 	}
 	public void setIs_long_method(Cell is_long_method) {
 		this.is_long_method = is_long_method;
 	}
-	public Cell getiPlasma() {
-		return iPlasma;
+	public boolean getiPlasma() {
+		return iPlasma.getBooleanCellValue();
 	}
 	public void setiPlasma(Cell iPlasma) {
 		this.iPlasma = iPlasma;
 	}
-	public Cell getPMD() {
-		return PMD;
+	public boolean getPMD() {
+		return PMD.getBooleanCellValue();
 	}
 	public void setPMD(Cell pMD) {
 		PMD = pMD;
 	}
-	public Cell getIs_featue_envy() {
-		return is_feature_envy;
+	public boolean getIs_featue_envy() {
+		return is_feature_envy.getBooleanCellValue();
 	}
 	public void setIs_featue_envy(Cell is_featue_envy) {
 		this.is_feature_envy = is_featue_envy;

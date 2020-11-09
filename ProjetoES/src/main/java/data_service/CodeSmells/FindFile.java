@@ -153,6 +153,6 @@ public class FindFile {
         final long ini = System.currentTimeMillis();
         final File f = ff.find();
         final long end = System.currentTimeMillis();
-        System.out.println(f.toString() + " " + (end - ini) + " ms");
+       // System.out.println(f.toString() + " " + (end - ini) + " ms");
     }
 }
