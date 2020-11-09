@@ -61,11 +61,11 @@ public class GUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1093, 487);
+		frame.setBounds(100, 100, 903, 397);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btnImportExcell = new JButton("Import Excell");
-		btnImportExcell.setBounds(948, 414, 119, 23);
+		btnImportExcell.setBounds(760, 328, 119, 23);
 		btnImportExcell.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -74,68 +74,72 @@ public class GUI {
 		frame.getContentPane().add(btnImportExcell);
 		
 		JCheckBox chckbxLongMethod = new JCheckBox("Long Method");
-		chckbxLongMethod.setBounds(162, 90, 97, 23);
+		chckbxLongMethod.setBounds(150, 37, 97, 23);
 		frame.getContentPane().add(chckbxLongMethod);
 		
 		JCheckBox chckbxFeatureEnvy = new JCheckBox("Feature Envy");
-		chckbxFeatureEnvy.setBounds(566, 90, 97, 23);
+		chckbxFeatureEnvy.setBounds(566, 37, 97, 23);
 		frame.getContentPane().add(chckbxFeatureEnvy);
 		
 		JCheckBox chckbxLOC = new JCheckBox("Lines of Code");
-		chckbxLOC.setBounds(71, 162, 128, 23);
+		chckbxLOC.setBounds(71, 78, 128, 23);
 		frame.getContentPane().add(chckbxLOC);
 		
 		JCheckBox chckbxCYCLO = new JCheckBox("Cyclomatic Complexity");
-		chckbxCYCLO.setBounds(71, 239, 145, 23);
+		chckbxCYCLO.setBounds(71, 164, 133, 23);
 		frame.getContentPane().add(chckbxCYCLO);
 		
 		JCheckBox chckbxATFD = new JCheckBox("Access to Foreign Data");
-		chckbxATFD.setBounds(466, 162, 151, 23);
+		chckbxATFD.setBounds(466, 78, 151, 23);
 		frame.getContentPane().add(chckbxATFD);
 		
-		JCheckBox chckbxLAA = new JCheckBox("New check box");
-		chckbxLAA.setBounds(466, 239, 97, 23);
+		JCheckBox chckbxLAA = new JCheckBox("Locality of Attribute Accesses");
+		chckbxLAA.setBounds(466, 164, 167, 23);
 		frame.getContentPane().add(chckbxLAA);
 		
 		JRadioButton rdbtnAnd1 = new JRadioButton("And");
 		buttonGroup_1.add(rdbtnAnd1);
-		rdbtnAnd1.setBounds(72, 201, 51, 23);
+		rdbtnAnd1.setBounds(71, 122, 51, 23);
 		frame.getContentPane().add(rdbtnAnd1);
 		
 		JRadioButton rdbtnOr1 = new JRadioButton("Or");
 		buttonGroup_1.add(rdbtnOr1);
-		rdbtnOr1.setBounds(128, 201, 71, 23);
+		rdbtnOr1.setBounds(128, 122, 71, 23);
 		frame.getContentPane().add(rdbtnOr1);
 		
 		JRadioButton rdbtnAnd2 = new JRadioButton("And");
 		buttonGroup.add(rdbtnAnd2);
-		rdbtnAnd2.setBounds(469, 201, 51, 23);
+		rdbtnAnd2.setBounds(466, 122, 51, 23);
 		frame.getContentPane().add(rdbtnAnd2);
 		
 		JRadioButton rdbtnOr2 = new JRadioButton("Or");
 		buttonGroup.add(rdbtnOr2);
-		rdbtnOr2.setBounds(522, 201, 71, 23);
+		rdbtnOr2.setBounds(519, 122, 71, 23);
 		frame.getContentPane().add(rdbtnOr2);
 		
 		textField = new JTextField();
-		textField.setBounds(222, 163, 86, 20);
+		textField.setBounds(210, 79, 86, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(222, 240, 86, 20);
+		textField_1.setBounds(210, 165, 86, 20);
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
-		textField_2.setBounds(623, 239, 86, 20);
+		textField_2.setBounds(639, 165, 86, 20);
 		frame.getContentPane().add(textField_2);
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
-		textField_3.setBounds(623, 162, 86, 20);
+		textField_3.setBounds(639, 79, 86, 20);
 		frame.getContentPane().add(textField_3);
+		
+		JButton btnScanCode = new JButton("Scan Code");
+		btnScanCode.setBounds(303, 222, 159, 38);
+		frame.getContentPane().add(btnScanCode);
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
