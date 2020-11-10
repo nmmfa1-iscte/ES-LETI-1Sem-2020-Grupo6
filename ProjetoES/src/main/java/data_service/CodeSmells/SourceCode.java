@@ -63,9 +63,12 @@ public class SourceCode {
 		ATFD = aTFD;
 	}
 	public double getLAA() {
-		
-		double laa=LAA.getNumericCellValue();
-		System.out.println(LAA);
+		double laa=0;	
+		if(LAA.getCellType()==0) {
+				laa=LAA.getNumericCellValue();
+			}else {
+				laa=Double.parseDouble(LAA.getStringCellValue());
+			}
 		return laa;
 	}
 	public void setLAA(Cell cell) {
