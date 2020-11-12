@@ -3,20 +3,17 @@
  */
 package data_service.CodeSmells;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
-import org.apache.poi.ss.formula.FormulaParseException;
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.Comment;
-import org.apache.poi.ss.usermodel.Hyperlink;
-import org.apache.poi.ss.usermodel.RichTextString;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -26,14 +23,35 @@ import org.junit.jupiter.api.Test;
  *
  */
 class TestSourceCode {
-	static SourceCode souceCodeTest;
+	static SourceCode sourceCodeTest;
+	static SourceCode souceCodeTest1;
+	static Cell cellNumeric;
+	static Cell cellString;
+	static Cell cellBoolean;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		souceCodeTest = new SourceCode();
+		sourceCodeTest = new SourceCode();
+		souceCodeTest1 = new SourceCode();
+		startCells();
+	}
+
+	private static void startCells() {
+		try {
+			File file = new File("testFiles/testWorkBook.xlsx");
+			FileInputStream fis = new FileInputStream(file);
+			XSSFWorkbook testWorkBook = new XSSFWorkbook(fis);
+			XSSFSheet sheet = testWorkBook.getSheetAt(0);
+			Row row = sheet.getRow(0);
+			cellNumeric = row.getCell(0);
+			cellString = row.getCell(1);
+			cellBoolean = row.getCell(2);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -49,8 +67,8 @@ class TestSourceCode {
 	 */
 	@Test
 	void testGetSetMethodID() {
-		souceCodeTest.setMethodID(0);
-		assertEquals(0, souceCodeTest.getMethodID());
+		sourceCodeTest.setMethodID(0);
+		assertEquals(0, sourceCodeTest.getMethodID());
 	}
 
 	/**
@@ -59,8 +77,8 @@ class TestSourceCode {
 	 */
 	@Test
 	void testGetSetPkg() {
-		souceCodeTest.setPkg("Test");
-		assertEquals("Test", souceCodeTest.getPkg());
+		sourceCodeTest.setPkg("Test");
+		assertEquals("Test", sourceCodeTest.getPkg());
 	}
 
 	/**
@@ -69,8 +87,8 @@ class TestSourceCode {
 	 */
 	@Test
 	void testGetSetClss() {
-		souceCodeTest.setClss("Test");
-		assertEquals("Test", souceCodeTest.getClss());
+		sourceCodeTest.setClss("Test");
+		assertEquals("Test", sourceCodeTest.getClss());
 	}
 
 	/**
@@ -79,8 +97,8 @@ class TestSourceCode {
 	 */
 	@Test
 	void testGetSetMethod() {
-		souceCodeTest.setMethod("Test");
-		assertEquals("Test", souceCodeTest.getMethod());
+		sourceCodeTest.setMethod("Test");
+		assertEquals("Test", sourceCodeTest.getMethod());
 	}
 
 	/**
@@ -89,8 +107,8 @@ class TestSourceCode {
 	 */
 	@Test
 	void testGetSetLOC() {
-		souceCodeTest.setLOC(0);
-		assertEquals(0, souceCodeTest.getLOC());
+		sourceCodeTest.setLOC(0);
+		assertEquals(0, sourceCodeTest.getLOC());
 	}
 
 	/**
@@ -99,8 +117,8 @@ class TestSourceCode {
 	 */
 	@Test
 	void testGetSetCYCLO() {
-		souceCodeTest.setCYCLO(0);
-		assertEquals(0, souceCodeTest.getCYCLO());
+		sourceCodeTest.setCYCLO(0);
+		assertEquals(0, sourceCodeTest.getCYCLO());
 	}
 	
 
@@ -110,8 +128,8 @@ class TestSourceCode {
 	 */
 	@Test
 	void testGetSetATFD() {
-		souceCodeTest.setATFD(0);
-		assertEquals(0, souceCodeTest.getATFD());
+		sourceCodeTest.setATFD(0);
+		assertEquals(0, sourceCodeTest.getATFD());
 	}
 
 	/**
@@ -119,9 +137,9 @@ class TestSourceCode {
 	 * Test method for {@link data_service.CodeSmells.SourceCode#setLAA(org.apache.poi.ss.usermodel.Cell)}.
 	 */
 	@Test
-	void testGetSetLAA() {
-		//souceCodeTest.setLAA(new Cell());
-		assertEquals(0, souceCodeTest.getLAA());
+	void testGetSetLAAType0() {
+		sourceCodeTest.setLAA(cellNumeric);
+		assertEquals(0, sourceCodeTest.getLAA());
 	}
 
 	/**
@@ -130,7 +148,9 @@ class TestSourceCode {
 	 */
 	@Test
 	void testGetSetIs_long_method() {
-		fail("Not yet implemented");
+		sourceCodeTest.setIs_long_method(cellBoolean);
+		boolean f = false;
+		assertEquals(f, sourceCodeTest.getIs_long_method());
 	}
 
 	/**
@@ -139,7 +159,9 @@ class TestSourceCode {
 	 */
 	@Test
 	void testGetSetiPlasma() {
-		fail("Not yet implemented");
+		sourceCodeTest.setiPlasma(cellBoolean);
+		boolean f = false;
+		assertEquals(f, sourceCodeTest.getiPlasma());
 	}
 
 	/**
@@ -148,7 +170,9 @@ class TestSourceCode {
 	 */
 	@Test
 	void testGetSetPMD() {
-		fail("Not yet implemented");
+		sourceCodeTest.setPMD(cellBoolean);
+		boolean f = false;
+		assertEquals(f, sourceCodeTest.getPMD());
 	}
 
 	/**
@@ -157,7 +181,9 @@ class TestSourceCode {
 	 */
 	@Test
 	void testGetSetIs_featue_envy() {
-		fail("Not yet implemented");
+		sourceCodeTest.setIs_featue_envy(cellBoolean);
+		boolean f = false;
+		assertEquals(f, sourceCodeTest.getIs_featue_envy());
 	}
 
 	/**
@@ -165,7 +191,8 @@ class TestSourceCode {
 	 */
 	@Test
 	void testToString() {
-		fail("Not yet implemented");
+		System.out.println(sourceCodeTest.toString());
+		assertEquals("0 null Test null 0 0 0 0.0 null null null null", sourceCodeTest.toString());
 	}
 
 }
