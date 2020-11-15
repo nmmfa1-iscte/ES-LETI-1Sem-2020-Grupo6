@@ -4,8 +4,6 @@
 package data_service.CodeSmells;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -136,6 +134,7 @@ class TestSourceCode {
 	 * Test method for {@link data_service.CodeSmells.SourceCode#getLAA()}.
 	 * Test method for {@link data_service.CodeSmells.SourceCode#setLAA(org.apache.poi.ss.usermodel.Cell)}.
 	 */
+	@SuppressWarnings("deprecation")
 	@Test
 	void testGetSetLAAType0() {
 		sourceCodeTest.setLAA(cellNumeric);
