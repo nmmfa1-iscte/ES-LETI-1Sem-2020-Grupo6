@@ -17,15 +17,13 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 /**
- * @author pedro
+ * @author pcmee
  *
  */
 class TestSourceCode {
-	static SourceCode sourceCodeTest;
-	static SourceCode souceCodeTest1;
-	static Cell cellNumeric;
-	static Cell cellString;
-	static Cell cellBoolean;
+	private static SourceCode sourceCodeTest;
+	private static Cell cellNumeric;
+	private static Cell cellBoolean;
 
 	/**
 	 * @throws java.lang.Exception
@@ -33,7 +31,6 @@ class TestSourceCode {
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		sourceCodeTest = new SourceCode();
-		souceCodeTest1 = new SourceCode();
 		startCells();
 	}
 
@@ -45,7 +42,6 @@ class TestSourceCode {
 			XSSFSheet sheet = testWorkBook.getSheetAt(0);
 			Row row = sheet.getRow(0);
 			cellNumeric = row.getCell(0);
-			cellString = row.getCell(1);
 			cellBoolean = row.getCell(2);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -134,11 +130,10 @@ class TestSourceCode {
 	 * Test method for {@link data_service.CodeSmells.SourceCode#getLAA()}.
 	 * Test method for {@link data_service.CodeSmells.SourceCode#setLAA(org.apache.poi.ss.usermodel.Cell)}.
 	 */
-	@SuppressWarnings("deprecation")
 	@Test
 	void testGetSetLAAType0() {
 		sourceCodeTest.setLAA(cellNumeric);
-		assertEquals(0, sourceCodeTest.getLAA());
+		assertEquals(0,(int) sourceCodeTest.getLAA());
 	}
 
 	/**
